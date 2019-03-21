@@ -128,9 +128,10 @@
     }
     console.log(res);
     function getData(cari, datapilihan, data){
+      console.log(datapilihan);
       if(datapilihan == cari.value.trim()){
         res.push(data);
-      }else if (cari.value == ""){
+      }else if (cari.value.trim() == ""){
         res = dataT.results;
       }
       ambilData();
@@ -140,8 +141,11 @@
       resfil= dataT.results;
       var cari = document.getElementById('data-filter'); 
       resfil.forEach(function(data){
-        datapilihan = {nama:data.name, rp:data.rotation_period, diameter:data.diameter, population:data.population };
+        datapilihan = {nama:data.name, rp:data.rotation_period, diameter:data.diameter, population:data.population};
         getData(cari, datapilihan[pilihan], data);
+        if(pilihan == "semua"){
+          res = dataT.results;
+        }
       });
     }
   </script>
