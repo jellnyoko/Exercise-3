@@ -140,7 +140,7 @@
       resfil= dataT.results;
       var cari = document.getElementById('data-filter'); 
       resfil.forEach(function(data){
-        datapilihan = {name:data.name, rp:data.rotation_period, diameter:data.diameter, population:data.population };
+        datapilihan = {nama:data.name, rp:data.rotation_period, diameter:data.diameter, population:data.population };
         getData(cari, datapilihan[pilihan], data);
       });
     }
